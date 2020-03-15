@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<Devin_favorite_books> 
+	<book id="1">
+		<title>The Happiness Project</title>
+		<author>Gretchen Rubin</author>
+		<published>2009</published>
+		<pages>368</pages>
+		<GoodReadsScore>3.6</GoodReadsScore>
+		<genre>memoir</genre>
+		<genre>self-help</genre>
+	</book>
+	<book id="2">
+		<title>All Creatures Great and Small</title>
+		<author>James Herriot</author>
+		<published>1972</published>
+		<pages>448</pages>
+		<GoodReadsScore>4.3</GoodReadsScore>
+		<genre>Auto Biography</genre>
+	</book>
+	<book id="3">
+		<title>I’ll Be Gone in the Dark</title>
+		<author>Michelle McNamara</author>
+		<author>Patton Oswald</author>
+		<published>2018</published>
+		<pages>352</pages>
+		<GoodReadsScore>4.1</GoodReadsScore>
+		<genre>Auto Biography</genre>
+		<genre>True Crime</genre>
+	</book>
+</Devin_favorite_books> 

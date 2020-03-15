@@ -1,0 +1,26 @@
+{"book" : [
+	{
+	"title" : "The Happiness Project",
+	"author" : "Gretchen Rubin",
+	"published" : 2009,
+	"pages" : 368,
+	"GoodReadsScore" : 3.6,
+	"genre": ["memoir","self-help"],
+	},
+	{
+	"title" : "All Creatures Great and Small",
+	"author" : "James Herriot",
+	"published" : 1972,
+	"pages" : 448,
+	"GoodReadsScore" : 4.3,
+	"genre" : "Auto Biography"
+	},
+	{
+	"title" : "I’ll Be Gone in the Dark",
+	"author" : ["Michelle McNamara", "Patton Oswald"],
+	"published" : 2018,
+	"pages" : 352,
+	"GoodReadsScore" : 4.1,
+	"genre" : ["Auto Biography","True Crime"]
+	}]
+}
