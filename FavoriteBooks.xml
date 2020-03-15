@@ -6,8 +6,7 @@
 		<published>2009</published>
 		<pages>368</pages>
 		<GoodReadsScore>3.6</GoodReadsScore>
-		<genre>memoir</genre>
-		<genre>self-help</genre>
+		<genre>memoir,self-help</genre>
 	</book>
 	<book id="2">
 		<title>All Creatures Great and Small</title>
@@ -19,12 +18,10 @@
 	</book>
 	<book id="3">
 		<title>Ill Be Gone in the Dark</title>
-		<author>Michelle McNamara</author>
-		<author>Patton Oswald</author>
+		<author>Michelle McNamara,Patton Oswald</author>
 		<published>2018</published>
 		<pages>352</pages>
 		<GoodReadsScore>4.1</GoodReadsScore>
-		<genre>Auto Biography</genre>
-		<genre>True Crime</genre>
+		<genre>Auto Biography,True Crime</genre>
 	</book>
 </Devin_favorite_books> 
