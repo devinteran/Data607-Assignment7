@@ -1,0 +1,84 @@
+---
+title: "Data607-Assignment7"
+author: "Devin Teran"
+date: "3/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(XML)
+library(RCurl)
+library(kableExtra)
+library(dplyr)
+library(jsonlite)
+```
+
+## Overview
+We're going to load a html, xml and json file from GitHub into R dataframe.  These files all contain information on my top 3 favorites books.  The files were created in Sublime Text.  
+  
+Once loaded, we will look to see if any of the dataframes are different.  
+  
+## Librarys Needed
+To do this the following libraries will need to be loaded in R:  
+* XML  
+* RCurl   
+* Dplyr  
+* Jsonlite  
+* KableExtra - used for displaying dataframes in a nice way  
+  
+# Get the data
+```{r get-data}
+url_html <- "https://raw.githubusercontent.com/devinteran/Data607-Assignment7/master/FavoriteBooks.html"
+url_xml  <- "https://raw.githubusercontent.com/devinteran/Data607-Assignment7/master/FavoriteBooks.xml"
+url_json <- "https://raw.githubusercontent.com/devinteran/Data607-Assignment7/master/FavoriteBooks.json"
+
+url_html <- getURL(url_html)
+url_xml  <- getURL(url_xml)
+```
+
+## Parse Data into DataFrames  
+First let's get our json file.  Let's also confirm that the json file is in the proper format.  If it is, the function isValidJSON will return TRUE.   
+```{r get-json-data}
+#isValidJSON(url_json)
+json <- as.data.frame(jsonlite::fromJSON(url_json))
+```
+
+Second, let's get our html file using htmlParse and readHTMLTable.  
+```{r parse_html_data}
+html <- htmlParse(file = url_html)
+html <- readHTMLTable(html)
+```
+
+Finally, we'll retrieve our xml file using xmlParse and xmlToDataFrame.
+```{r parse_xml_data}
+xml <- xmlParse(file = url_xml)
+xml <- xmlToDataFrame(xml)
+```
+
+## Look at Data
+Below we can see that each file type handles columns with multiple values differently.  
+* JSON appears to put the items in a list "c()".  
+* The HTML data is coming from a table, so the formatting shows the duplicated items in a second row in the dataframe.  
+* XML columns with multiple items have been separated by a column because the original file was formatted this way.
+
+The HTML has attached the node, **book.**, to each column name while XML & JSON do not.
+
+If we were going to do further anaylsis using these files, additional file cleaning would be needed.  
+  
+***JSON***
+```{r view-data,echo=FALSE}
+kable(head(json)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+***HTML***
+```{r view-data-html,echo=FALSE}
+kable(head(html)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+***XML***
+```{r view-data-xml,echo=FALSE}
+kable(head(xml)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
